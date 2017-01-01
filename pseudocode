@@ -1,0 +1,106 @@
+
+
+
+
+
+The program "cardGame" simulates a classical deck of cards using a traditional
+deck of cards and allowing the user to shuffle and deal the cards to the 
+participating players. These functionalities allow the implementation of a 
+simulation for a stud Poker game, where participants are given 5 cards each and 
+a winner is chosen by following a special ranking that defines up to 10 
+different types of hands.
+
+The program uses two structs to define the two most important elements in the 
+game, the Cards and the Players, therefore the structs Card and player were 
+defined where a Card element is defined using two integer numbers, those being
+it's suit and it's rank. The struct Player on the other hand is defined as an
+element which contains a collection (which in this case is defined as an array), 
+of cards.
+The program is separated into several files:
+	game.c
+This file contains the main function and allows to simulate the game by using 
+some of the other files functions.
+	deck.c
+This file contains all of the functions that are relevant to the game from a 
+deck's perspective, functions like deal(), shuffle(), and displayBatch() of 
+cards are some of the functions implemented here. This file also contains other 
+functions that act as helpers to the main functions described before, functions 
+like swap, randomize pick, and validate game input to name a few.
+	player.c
+This file contains all the functions that are relevant from a player's 
+perspective, functions such as createAllPlayers(), which will prove useful if 
+the game is required to initialize players with specific parameter values, and 
+also functions like displayAllPlayerHands() which will display all of the 
+players hands on screen.
+	game.h
+This file contains the Function Prototype declarations for the game and its 
+related files, the two structures used as well as the libraries and definitions 
+that are used throughout the program.
+	studPokerRules.c
+This file contains the rules of the stud poker card game in which players are 
+dealt up to five cards and a winner is decided upon evaluating the hands. This
+file has a family of functions which decide if a hand is of a certain kind on 
+an orderly way and assigns a rank to each hand. Notice that each hand is 
+selected from a recently shuffled deck.
+
+The main program/game functionality and flow can be described by the following 
+pseudocode:
+
+Logic program execution:
+
+INITIALIZE AND DEFINE CONSTANTS
+	CARDS_IN_A_DECK
+	CARDS_IN_A_SUIT
+	SUITS_IN_A_DECK
+	...
+DECLARE THE STRUCTURES TO BE USED
+	CARD {}
+	PLAYER {}
+THE FUNCTIONS PROTOTYPE DECLARATIONS
+	...
+EXECUTE:
+	 IF: validateCommandLineImput(int ,char *[]) 
+	 	&& (validateGameInput(int, int));
+
+		//Create the arrays that contain the players and the deck.
+		Card deck[];
+		Player playersInGame[];
+		displayDeckInLines(deck);
+
+		//Create the deck, and print it.
+		createDeck(deck);
+		displayDeckInLines(deck);
+
+		//Shuffle the deck and then print it.
+		shuffleDeck(deck);
+		displayDeckInLines(deck);
+
+		//Deal each player's hand and print them.
+		dealDeck(deck, playersInGame, handLength, numHands);
+		displayAllPlayersHands(playersInGame, handLength, numHands);
+
+		//Evaluate each of the player hands and print their ranks
+		evaluateHand(playersInGame, handLength, numHands);
+			
+	END IF
+
+RETURN NO_PROGRAM_ERRORS;
+
+END
+
+
+* Notice that instructions on how to compile and execute this program can be
+seen in the game.c file. *
+
+
+
+
+
+
+
+
+
+
+
+
+
