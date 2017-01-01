@@ -10,6 +10,6 @@ This file contains all of the functions pertaining a player in the game, create 
       <br><b>game.c</b><br>
 This file uses all of the other files to recreate a game of poker, it is a main driver that ofers a main perspective of the game and does not deal with any basic implementation other than evaluating program input.
 
-      <br><b>sampleoutput.pdf</b><br>
+<br><b>sampleoutput.pdf</b><br>
 This file contains a sample program output of the game.
   
