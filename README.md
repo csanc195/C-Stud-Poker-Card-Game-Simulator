@@ -1,7 +1,7 @@
 # C-Stud-Poker-Card-Game-Simulator
 The following C program simulates a game of stud poker, where hands are dealt to a desired amount of players at random and then each hand is evaluated and ranked according to the stud poker rules.
 
-The program follows the following structure:
+# The program follows the following structure:
       <br><b>The file deck.c</b><br>
 This file contains all of the functions pertaining to the deck of cards, functionality such as 
 creating the deck, dealing cards to the given amount of players, displaying a batch of cards, being a hand or a group of cards etc.
